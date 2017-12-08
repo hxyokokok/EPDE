@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-12-07T10:07:20</date>
+  <millis>1512612440586</millis>
+  <sequence>0</sequence>
+  <logger>org.uma.jmetal.util.JMetalLogger</logger>
+  <level>INFO</level>
+  <class>org.uma.jmetal.util.JMetalLogger</class>
+  <method>configureLoggers</method>
+  <thread>1</thread>
+  <message>Loggers configured with null</message>
+</record>
+<record>
+  <date>2017-12-07T10:07:20</date>
+  <millis>1512612440648</millis>
+  <sequence>1</sequence>
+  <logger>org.uma.jmetal.util.JMetalLogger</logger>
+  <level>SEVERE</level>
+  <class>org.uma.jmetal.util.JMetalException</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>initializeUniformWeight: failed when reading file: </message>
+  <exception>
+    <message>java.lang.NullPointerException</message>
+    <frame>
+      <class>java.io.Reader</class>
+      <method>&lt;init&gt;</method>
+      <line>78</line>
+    </frame>
+    <frame>
+      <class>java.io.InputStreamReader</class>
+      <method>&lt;init&gt;</method>
+      <line>72</line>
+    </frame>
+    <frame>
+      <class>hxy.Tools</class>
+      <method>ReadWeights</method>
+      <line>188</line>
+    </frame>
+    <frame>
+      <class>hxy.MOEAD_DE_EP</class>
+      <method>&lt;init&gt;</method>
+      <line>47</line>
+    </frame>
+    <frame>
+      <class>hxy.MOEAD_DE_EP</class>
+      <method>createInstance</method>
+      <line>26</line>
+    </frame>
+    <frame>
+      <class>hxy.SimpleTest</class>
+      <method>main</method>
+      <line>22</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke0</method>
+    </frame>
+    <frame>
+      <class>sun.reflect.NativeMethodAccessorImpl</class>
+      <method>invoke</method>
+      <line>62</line>
+    </frame>
+    <frame>
+      <class>sun.reflect.DelegatingMethodAccessorImpl</class>
+      <method>invoke</method>
+      <line>43</line>
+    </frame>
+    <frame>
+      <class>java.lang.reflect.Method</class>
+      <method>invoke</method>
+      <line>498</line>
+    </frame>
+    <frame>
+      <class>com.intellij.rt.execution.application.AppMain</class>
+      <method>main</method>
+      <line>147</line>
+    </frame>
+  </exception>
+</record>
+</log>
