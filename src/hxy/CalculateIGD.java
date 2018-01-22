@@ -21,7 +21,9 @@ public class CalculateIGD {
     public static void main(String[] args) throws IOException, NoSuchFieldException, IllegalAccessException {
         int max_runs = 20;
         String algName = "MOEAD_EP";
-        String experiment_base_dir = Tools.class.getResource("..").getPath() + "/results/" + algName;
+        String experiment_base_dir = new File(Tools.class.getResource("..").getPath()).getParentFile().getParentFile().getParentFile().getPath()+ "/results/" + algName;
+
+//        String experiment_base_dir = Tools.class.getResource("..").getPath() + "/results/" + algName;
         List<String> use_indicator = new ArrayList<>();
         use_indicator.add("IGD");
         for (File one_run_dir : new File(experiment_base_dir).listFiles()) {
@@ -38,7 +40,8 @@ public class CalculateIGD {
             for (String indicator_name : use_indicator) {
                 QualityIndicator quality_indicator = null;
                 String pf_fname = problem_name + "_" + M + ".txt";
-                pf_fname = "/pf/" + pf_fname;
+//                pf_fname = "/pf/" + pf_fname;
+                pf_fname = new File(Tools.class.getResource("..").getPath()).getParentFile().getParentFile().getParentFile().getPath()+"/pf/" + pf_fname;
                 switch (indicator_name) {
                     case "IGD":
                         quality_indicator = new InvertedGenerationalDistance(pf_fname, 1.0);

@@ -3,6 +3,7 @@ package hxy;
 import org.uma.jmetal.qualityindicator.impl.InvertedGenerationalDistance;
 import org.uma.jmetal.solution.DoubleSolution;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,8 @@ public class SimpleTest {
             alg.run();
             double elapsedTime = (currentTimeMillis() - start) / 1000.0;
             List<DoubleSolution> result = alg.getResult();
-            String pf_name = "/pf/" + p.getPfName();
+            String pf_name = new File(Tools.class.getResource("..").getPath()).getParentFile().getParentFile().getParentFile().getPath()+"/pf/" + p.getPfName();
+//            String pf_name = "/pf/" + p.getPfName();
 //            config IGD
             InvertedGenerationalDistance<DoubleSolution> IGD_measure = new InvertedGenerationalDistance<DoubleSolution>(pf_name, 1);
             double IGD = IGD_measure.evaluate(result);

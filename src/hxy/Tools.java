@@ -7,9 +7,7 @@ import org.uma.jmetal.solution.DoubleSolution;
 import org.uma.jmetal.util.JMetalException;
 import org.uma.jmetal.util.pseudorandom.JMetalRandom;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Tools {
@@ -184,9 +182,11 @@ public class Tools {
             String dataFileName;
             dataFileName = M + "D_" + H + ".txt";
             try {
-                InputStream in = Tools.class.getResourceAsStream("/weights_/" + dataFileName);
-                InputStreamReader isr = new InputStreamReader(in);
-                BufferedReader br = new BufferedReader(isr);
+//                InputStream in = Tools.class.getResourceAsStream("/weights_/" + dataFileName);
+//                InputStreamReader isr = new InputStreamReader(in);
+//                BufferedReader br = new BufferedReader(isr);
+                String weightFile = new File(Tools.class.getResource("..").getPath()).getParentFile().getParentFile().getParentFile().getPath()+"/weights_/"+dataFileName;
+                BufferedReader br = new BufferedReader(new FileReader(weightFile));
                 int i = 0;
                 int j = 0;
                 String aux = br.readLine();

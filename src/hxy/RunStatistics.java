@@ -18,7 +18,8 @@ import java.util.*;
  * Created by hxy on 2017/3/26.
  */
 public class RunStatistics {
-    String output_dir_path = Tools.class.getResource("..").getPath() + "/results/";
+    //    String output_dir_path = Tools.class.getResource("..").getPath() + "/results/";
+    String output_dir_path = new File(Tools.class.getResource("..").getPath()).getParentFile().getParentFile().getParentFile().getPath() + "/results/";
     //    List<String> use_indicator = Arrays.asList("IGD");
 //    List<String> use_indicator = Arrays.asList("HV0905","IGD","Delta_p");
     List<String> use_indicator = Arrays.asList("Delta_p");
@@ -54,13 +55,13 @@ public class RunStatistics {
     public static void main(String[] args) throws Exception {
         List<String> alg_dir_list = new ArrayList<>();
 
-        alg_dir_list.add("NSGA3-EP");
-        alg_dir_list.add("NSGA3");
-//        alg_dir_list.add("MOEAD-EP");
-//        alg_dir_list.add("MOEAD-SBX");
-//        alg_dir_list.add("MOEAD-BLX");
-//        alg_dir_list.add("MOEAD-DE");
-//        alg_dir_list.add("MOEAD-HOP");
+//        alg_dir_list.add("NSGA3-EP");
+//        alg_dir_list.add("NSGA3");
+        alg_dir_list.add("MOEAD-EP");
+        alg_dir_list.add("MOEAD-SBX");
+        alg_dir_list.add("MOEAD-BLX");
+        alg_dir_list.add("MOEAD-DE");
+        alg_dir_list.add("MOEAD-HOP");
 
 //        move the target algorithm to the first column
         for (int i = 0; i < alg_dir_list.size(); i++) {
